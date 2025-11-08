@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore - J2 Nexus Technologies</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Explore Page Specific Styles */
+    .explore-section {
+      padding: 120px 5% 60px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .explore-section h1 {
+      color: #003366;
+      margin-bottom: 30px;
+    }
+
+    .explore-section p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .explore-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .explore-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .explore-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .explore-card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .explore-card p {
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logo.jpg.png" alt="J2 Nexus Logo">
+        <span>J2 Nexus Technologies</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="explore.html" class="active">Explore</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="login">
+        <a href="login.html">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Explore Section -->
+  <section class="explore-section">
+    <h1>Explore the Future of Smart Technology</h1>
+    <p>At J2 Nexus Technologies, we continuously explore innovations that redefine convenience and efficiency. From advanced smartwatches to next-generation tech accessories, we bring you products that connect, enhance, and inspire.</p>
+
+    <div class="explore-grid">
+      <div class="explore-card">
+        <img src="smartwatch.jpg" alt="Smartwatch">
+        <h3>Smartwatch Innovations</h3>
+        <p>Discover watches that do more than tell time — track fitness, monitor health, and keep you connected wherever you go.</p>
+      </div>
+
+      <div class="explore-card">
+        <img src="iot.jpg" alt="IoT Devices">
+        <h3>Internet of Things</h3>
+        <p>Explore how smart devices communicate seamlessly to create a connected lifestyle for homes and businesses.</p>
+      </div>
+
+      <div class="explore-card">
+        <img src="future-tech.jpg" alt="Future Tech">
+        <h3>Future-Ready Technology</h3>
+        <p>We embrace cutting-edge innovations that shape tomorrow’s world — merging design, intelligence, and functionality.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 J2 Nexus Technologies. All rights reserved.</p>
+  </footer>
+</body>
+</html>

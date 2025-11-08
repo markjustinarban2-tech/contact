@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products - J2 Nexus Technologies</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Product Page Specific Styles */
+    .product-section {
+      padding: 120px 5% 60px;
+      background-color: #f9f9f9;
+    }
+
+    .product-section h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card .info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-card .info h3 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .product-card .info p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .product-card .info button {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product-card .info button:hover {
+      background-color: #0055a5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logo.jpg.png" alt="J2 Nexus Logo">
+        <span>J2 Nexus Technologies</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html" class="active">Products</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="login">
+        <a href="login.html">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="product-section">
+    <h1>Our Featured Products</h1>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="analog.jpg.jpg" alt="Analog Watch" />
+        <div class="info">
+          <h3>Analog Watch</h3>
+          <p>Traditional watch with hour, minute, and sometimes second hands that move around a dial with numbers or markers..</p>
+          <button class="add-to-cart" data-name="Analog Watch" data-price="1499" data-image="analog.jpg.jpg">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="digital.jpg.jpg" alt="Digital Watch" />
+        <div class="info">
+          <h3>Digital Watch</h3>
+          <p>Displays time in numeric digits (e.g., 12:45) using an LCD or LED screen.</p>
+          <button class="add-to-cart" data-name="Digital Watch" data-price="1799" data-image="digital.jpg.jpg">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="automatic.jpg.jpg" alt="Automatic Watch" />
+        <div class="info">
+          <h3>Automatic Watch</h3>
+          <p>A mechanical watch that winds itself using the motion of your wrist—no battery needed..</p>
+          <button class="add-to-cart" data-name="Automatic Watch" data-price="2999" data-image="automatic.jpg.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 J2 Nexus Technologies. All rights reserved.</p>
+  </footer>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
+
+  <script>
+    // ✅ Your Firebase Configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDgqYGUg60uiGTPHiHa3QKHROP4C6ES39w",
+  authDomain: "contact-610e6.firebaseapp.com",
+  databaseURL: "https://contact-610e6-default-rtdb.firebaseio.com",
+  projectId: "contact-610e6",
+  storageBucket: "contact-610e6.firebasestorage.app",
+  messagingSenderId: "808828457636",
+  appId: "1:808828457636:web:bd7dca4f9241c19fac8c31",
+  measurementId: "G-EDE76GTY1E"
+};
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // ✅ Add to Cart Logic
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', async () => {
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+        const image = button.dataset.image;
+
+        try {
+          await db.collection('cart').add({
+            name: name,
+            price: price,
+            image: image,
+            createdAt: new Date()
+          });
+          alert(`${name} has been added to your cart!`);
+        } catch (error) {
+          console.error("Error adding to cart: ", error);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

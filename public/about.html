@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - J2 Nexus Technologies</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* About Page Styles */
+    .about-section {
+      padding: 120px 5% 60px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .about-section h1 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .about-text {
+      flex: 1 1 400px;
+      text-align: left;
+    }
+
+    .about-image {
+      flex: 1 1 350px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .mission-vision {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .mission-vision .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .mission-vision .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .mission-vision .card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .mission-vision .card p {
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="logo.jpg.png" alt="J2 Nexus Logo">
+        <span>J2 Nexus Technologies</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="login">
+        <a href="login.html">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h1>About J2 Nexus Technologies</h1>
+    <p>J2 Nexus Technologies is a forward-thinking company dedicated to delivering innovative technology solutions that simplify lives and empower businesses. We specialize in high-quality smart devices, electronics, and digital solutions that connect people to the future of technology.</p>
+
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>Founded by passionate innovators, J2 Nexus Technologies started with a mission to blend technology with everyday convenience. From smartwatches to automation systems, we aim to bring powerful, reliable, and affordable tech to our customers.</p>
+        <p>We believe in progress through innovation — where every product we create or promote is designed to improve how you live, work, and connect with the world around you.</p>
+      </div>
+      <div class="about-image">
+        <img src="team.jpg" alt="Our Team">
+      </div>
+    </div>
+
+    <div class="mission-vision">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>To empower individuals and businesses with cutting-edge technology that enhances productivity, creativity, and connectivity while maintaining quality and affordability.</p>
+      </div>
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>To become a leading name in smart technology innovation, inspiring a world where modern solutions meet human needs through sustainable and intelligent design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 J2 Nexus Technologies. All rights reserved.</p>
+  </footer>
+</body>
+</html>
